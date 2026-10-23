@@ -1,0 +1,104 @@
+@import "tailwindcss";
+
+/* -------------------------------------------------------------
+   Dynamic Weather Animations for Peanuts Holiday GameCanvas
+   Layered weather transitions: Gentle Flurries -> Intense Blizzard
+   ------------------------------------------------------------- */
+
+@keyframes gentleSnowFall {
+  0% {
+    transform: translate3d(0, -20px, 0);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.85;
+  }
+  85% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate3d(24px, 105vh, 0);
+    opacity: 0;
+  }
+}
+
+@keyframes gentleSnowSway {
+  0%, 100% {
+    margin-left: 0;
+  }
+  50% {
+    margin-left: 18px;
+  }
+}
+
+@keyframes blizzardStreakFall {
+  0% {
+    transform: translate3d(60px, -30px, 0) rotate(26deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.95;
+  }
+  90% {
+    opacity: 0.9;
+  }
+  100% {
+    transform: translate3d(-340px, 580px, 0) rotate(30deg);
+    opacity: 0;
+  }
+}
+
+@keyframes blizzardWindSweep {
+  0% {
+    transform: translateX(110%) scaleY(0.9);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.45;
+  }
+  60% {
+    opacity: 0.35;
+  }
+  100% {
+    transform: translateX(-120%) scaleY(1.3);
+    opacity: 0;
+  }
+}
+
+@keyframes frostVignettePulse {
+  0%, 100% {
+    opacity: 0.4;
+    box-shadow: inset 0 0 50px 18px rgba(186, 230, 253, 0.45), inset 0 0 100px 35px rgba(56, 189, 248, 0.2);
+  }
+  50% {
+    opacity: 0.75;
+    box-shadow: inset 0 0 80px 28px rgba(224, 242, 254, 0.75), inset 0 0 130px 50px rgba(56, 189, 248, 0.38);
+  }
+}
+
+@keyframes frostGlazeShimmer {
+  0%, 100% {
+    filter: brightness(1) contrast(1);
+  }
+  50% {
+    filter: brightness(1.12) contrast(1.05);
+  }
+}
+
+/* Reusable animation utility classes */
+.animate-gentle-snow {
+  animation: gentleSnowFall var(--snow-duration, 5s) linear infinite,
+             gentleSnowSway var(--sway-duration, 3s) ease-in-out infinite;
+}
+
+.animate-blizzard-streak {
+  animation: blizzardStreakFall var(--blizzard-duration, 0.85s) linear infinite;
+}
+
+.animate-wind-sweep {
+  animation: blizzardWindSweep 4.5s ease-in-out infinite;
+}
+
+.animate-frost-vignette {
+  animation: frostVignettePulse 3.5s ease-in-out infinite;
+}

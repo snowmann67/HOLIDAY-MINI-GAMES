@@ -1,0 +1,6 @@
+{
+  "name": "Snoopy Holiday Lens & Coin Adventure",
+  "description": "Play as Snoopy & Charlie Brown in a festive holiday coin adventure with level-by-level boards, Snow ATV racing, winter gear upgrades, and the official Snapchat Holiday Lens.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
